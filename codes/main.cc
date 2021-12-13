@@ -10,6 +10,7 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <ctime>
 #include "Floor.h"
 using namespace std;
 
@@ -87,8 +88,9 @@ int main(int argc, char* argv[]) {
         if (player->get_race() == "Shade") {
             point *= 1.5;
         }
+        player->set_hp(0);
         if (player->get_hp() <= 0) {
-            output(point, false);
+            output(11, false);
             break;
         } else if (floor->get_floor_number() == 6) {
             // when you go through all the 5 floors

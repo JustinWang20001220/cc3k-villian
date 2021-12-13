@@ -31,9 +31,6 @@ class Floor {
     Floor(int floor_number);
     ~Floor() {}
 
-    vector<shared_ptr<Character>> get_neighbouring_characters(shared_ptr<Character>);
-    vector<shared_ptr<Item>> get_neighbouring_items(shared_ptr<Character>);
-
     char get_symbol(int x_cor, int y_cor);
     void set_symbol(int x_cor, int y_cor, char symbol); 
     int get_floor_number();
