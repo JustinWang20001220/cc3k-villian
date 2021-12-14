@@ -2,6 +2,7 @@
 #define PLAYER_H
 #include "Character.h"
 #include "Item.h"
+#include <algorithm>
 #include <vector>
 using namespace std;
 

@@ -333,7 +333,7 @@ bool Floor::valid_atk(const shared_ptr<Enemy>& e, const std::shared_ptr<Player>&
 }
 
 void Floor::move_enemies() {
-    for (int i = 0; i < this->enemies.size(); ++i) {
+    for (unsigned int i = 0; i < this->enemies.size(); ++i) {
         int direction_number = rand() % 8;
         string direction;
         int old_x = enemies[i]->x_cor;
@@ -428,7 +428,7 @@ void Floor::player_attack(string direction) {
     if (new_sym == 'H' || new_sym == 'W' || new_sym == 'O' || new_sym == 'E' || 
         new_sym == 'M' || new_sym == 'L') {
         // this check for all enemies
-        for (int i = 0; i < this->enemies.size(); ++i) {
+        for (unsigned int i = 0; i < this->enemies.size(); ++i) {
             auto enemy = this->enemies[i];
             if (enemy->x_cor == new_x && enemy->y_cor == new_y) {
                 pair<bool, int> result = this->player->attack_to(*enemy);
@@ -453,7 +453,7 @@ void Floor::player_attack(string direction) {
             }
         }
     } else if (new_sym == 'D') {
-        for (int i = 0; i < dragons.size(); ++i) {
+        for (unsigned int i = 0; i < dragons.size(); ++i) {
             auto dragon = this->dragons[i];
             if (dragon->x_cor == new_x && dragon->y_cor == new_y) {
                 pair<bool, int> result = this->player->attack_to(*dragon);

@@ -31,7 +31,7 @@ pair<vector<shared_ptr<Item>>, bool> Player::move(char sym, int new_x, int new_y
         action = "You walked one step towards " + direction;
         return make_pair(items, true);
     } else if (sym == 'G') {
-        for (int i = 0; i < items.size(); ++i) {
+        for (unsigned int i = 0; i < items.size(); ++i) {
             auto gold = items[i];
             if (new_x == gold->x_cor && new_y == gold->y_cor) {
                 bool pickup = gold->get_pickup();
@@ -51,7 +51,7 @@ pair<vector<shared_ptr<Item>>, bool> Player::move(char sym, int new_x, int new_y
             }
         }
     } else if (sym == 'P') {
-        for (int i = 0; i < items.size(); ++i) {
+        for (unsigned int i = 0; i < items.size(); ++i) {
             auto potion = items[i];
             if (new_x == potion->x_cor && new_y == potion->y_cor) {
                 int potion_effect = potion->get_effect_val();
@@ -107,7 +107,7 @@ int Player::potion_effect(string type, int effect) {
 }
 
 pair<vector<shared_ptr<Item>>, vector<string>> Player::use_potion(int new_x, int new_y,vector<shared_ptr<Item>> items, vector<string> used_potions) {
-    for(int i = 0; i < items.size(); ++i) {
+    for(unsigned int i = 0; i < items.size(); ++i) {
         auto potion = items[i];
         int effect = potion->get_effect_val();
         string type = potion->get_effect_type();
